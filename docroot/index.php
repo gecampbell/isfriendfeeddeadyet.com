@@ -112,8 +112,8 @@ logmsg($target, $http_status, $pagesize, $extra);
 <meta name="keywords" content="friendfeed,friend,single-service site,monitoring"/>
 <meta name="refresh" content="600"/>
 <style type="text/css">
-body { background-color: black; color: silver; text-align: center; padding: 2em; font-family: helvetica, helvetica neue, arial, sans-serif;}
-#footer { display: block; position: absolute; bottom: 0; padding:1em; font-size: smaller; text-align: center; }
+body { background-color: black; color: silver; text-align: center; padding: 0; font-family: helvetica, helvetica neue, arial, sans-serif; width: 100%; }
+#footer { width: 100%; display: block; position: absolute; bottom: 0; padding:1em; font-size: smaller; text-align: center; }
 #status { font-size: 2in; line-height: 1in; color: white; font-weight: bold; }
 #extra { margin-top: 2em; font-style: italic; color: silver; }
 a { color: silver; text-decoration: none; }
