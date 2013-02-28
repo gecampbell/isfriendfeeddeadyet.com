@@ -139,6 +139,8 @@ marquee { font-family: helvetica, arial, sans-serif; font-weight: bold; color: r
   <p>&copy;2010-<?php echo date('y');?> <a href="http://glenc.co/" title="My boring blog">Glen Campbell</a>
   &bull;
   <a href="/help.html">Help</a>
+  &bull;
+  <a href="https://github.com/gecampbell/isfriendfeeddeadyet.com">Code</a>
   </p>
   </div>
 
