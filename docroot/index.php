@@ -19,10 +19,10 @@ function logmsg($target, $status, $size, $extra)
 	// the value "3" indicates to log to a file
 	error_log(sprintf("%s %s HTTP status=%d size=%d info=%s\n",
 				date('r'),
-				$target, 
-				$status, 
+				$target,
+				$status,
 				$size,
-				$extra), 
+				$extra),
 		3, // log to file
 		LOGFILE);
 }
@@ -76,7 +76,7 @@ else // no error, need to look at the HTTP status
 	preg_match('/HTTP\/1.1\s*([0-9]+)/', $header, $matches);
 	$http_status = $matches[1];
 	$pagesize = strlen($body);
-	
+
 	// determine the status
 	switch($http_status)
 	{
@@ -103,7 +103,7 @@ printf("<!-- FriendFeed HTTP status is %d, size is %d, on %s -->\n", $http_statu
 
 // we're going to keep a log of results
 logmsg($target, $http_status, $pagesize, $extra);
-	
+
 ?>
 <html>
 <head>
@@ -112,7 +112,7 @@ logmsg($target, $http_status, $pagesize, $extra);
 <meta name="keywords" content="friendfeed,friend,single-service site,monitoring"/>
 <meta name="refresh" content="600"/>
 <style type="text/css">
-body { background-color: white; color: silver; text-align: center; padding: 2em; font-family: garamond,georgia,baskerville,palatino,comic sans,futura,times roman,times new roman,times,serif;}
+body { background-color: white; color: silver; text-align: center; padding: 2em; font-family: helvetica, helvetica neue, arial, sans-serif;}
 #footer { display: block; position: absolute; bottom: 0; padding:1em; font-size: smaller; text-align: center; }
 #status { font-size: 2in; line-height: 1in; color: black; }
 #extra { margin-top: 2em; font-style: italic; color: gray; }
@@ -134,13 +134,13 @@ marquee { font-family: helvetica, arial, sans-serif; font-weight: bold; color: r
   ?>
 
   </div>
-  
+
   <div id="footer">
   <p>&copy;2010-<?php echo date('y');?> <a href="http://glenc.co/" title="My boring blog">Glen Campbell</a>
   &bull;
   <a href="/help.html">Help</a>
   </p>
   </div>
-  
+
 </body>
 </html>
