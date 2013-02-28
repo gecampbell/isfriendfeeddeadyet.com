@@ -112,11 +112,11 @@ logmsg($target, $http_status, $pagesize, $extra);
 <meta name="keywords" content="friendfeed,friend,single-service site,monitoring"/>
 <meta name="refresh" content="600"/>
 <style type="text/css">
-body { background-color: white; color: silver; text-align: center; padding: 2em; font-family: helvetica, helvetica neue, arial, sans-serif;}
+body { background-color: black; color: silver; text-align: center; padding: 2em; font-family: helvetica, helvetica neue, arial, sans-serif;}
 #footer { display: block; position: absolute; bottom: 0; padding:1em; font-size: smaller; text-align: center; }
-#status { font-size: 2in; line-height: 1in; color: black; }
-#extra { margin-top: 2em; font-style: italic; color: gray; }
-a { color: gray; text-decoration: none; }
+#status { font-size: 2in; line-height: 1in; color: white; font-weight: bold; }
+#extra { margin-top: 2em; font-style: italic; color: silver; }
+a { color: silver; text-decoration: none; }
 a:hover { text-decoration: underline; }
 marquee { font-family: helvetica, arial, sans-serif; font-weight: bold; color: red; }
 </style>
@@ -139,6 +139,8 @@ marquee { font-family: helvetica, arial, sans-serif; font-weight: bold; color: r
   <p>&copy;2010-<?php echo date('y');?> <a href="http://glenc.co/" title="My boring blog">Glen Campbell</a>
   &bull;
   <a href="/help.html">Help</a>
+  &bull;
+  <a href="http://broadpool.com" title="This site is a production of Broadpool Interactive">Broadpool</a>
   &bull;
   <a href="https://github.com/gecampbell/isfriendfeeddeadyet.com">Code</a>
   </p>
