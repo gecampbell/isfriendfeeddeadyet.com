@@ -33,7 +33,7 @@ function logmsg($target, $status, $size, $extra)
 $ch = curl_init();
 
 // define the URL
-$username = $_GET['user'];
+$username = isset($_GET['user']) ? $_GET['user'] : '';
 if ($username != '')
 {
 	$target = FRIENDFEED . $username;
