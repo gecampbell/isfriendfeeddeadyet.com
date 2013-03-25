@@ -136,11 +136,9 @@ marquee { font-family: helvetica, arial, sans-serif; font-weight: bold; color: r
   </div>
 
   <div id="footer">
-  <p>&copy;2010-<?php echo date('y');?> <a href="http://glenc.co/" title="My boring blog">Glen Campbell</a>
+  <p>&copy;2010-<?php echo date('y');?> <a href="http://glen-campbell.com/" title="My boring blog">Glen Campbell</a>
   &bull;
   <a href="/help.html">Help</a>
-  &bull;
-  <a href="http://broadpool.com" title="This site is a production of Broadpool Interactive">Broadpool</a>
   &bull;
   <a href="https://github.com/gecampbell/isfriendfeeddeadyet.com">Code</a>
   </p>
