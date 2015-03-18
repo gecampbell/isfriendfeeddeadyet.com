@@ -60,13 +60,13 @@ $page = curl_exec($ch);
 
 // $status holds the returned status
 // values are Yes, No, Maybe
-$status = 'Maybe'; // default value
+$status = 'Probably'; // default value
 $extra = '';
 
 // check the returned value
 if (curl_errno($ch)) // there is an error
 {
-	$status = 'Maybe';
+	$status = 'Probably';
 	$extra = curl_error($ch);
 }
 else // no error, need to look at the HTTP status
@@ -82,19 +82,23 @@ else // no error, need to look at the HTTP status
 	{
 	case 200: // everything is ok
 		if ($pagesize > SMALL_PAGE_LIMIT)
-			$status = 'No';
+			$status = 'Not yet';
 		else {
-			$status = 'Maybe';
+			$status = 'Perhaps';
 			$extra = 'Main page is unusually small';
 		}
 		break;
+    case 301:
+    case 302:
+        $status = 'Most likely';
+        break;
 	case 404: // not found
-		$status = 'Yes';
+		$status = 'Yes :-(';
 		if ($username != '')
 			$extra = 'That user does not appear to exist right now';
 		break;
 	default:
-		$status = 'Maybe';
+		$status = 'Probably';
 		$extra = sprintf('HTTP status code is %d', $http_status);
 	}
 }
@@ -128,6 +132,9 @@ marquee { font-family: helvetica, arial, sans-serif; font-weight: bold; color: r
   	<?php if ($extra) { ?>
   	<p id="extra"><?php print $extra;?></p>
   	<?php } ?>
+    <br>
+    <a href="http://blog.friendfeed.com/2015/03/dear-friendfeed-community-were.html">FriendFeed
+    is not long for this world</a>
   	<?php
   	// release the curl handle to clear up memory
   	curl_close($ch);
