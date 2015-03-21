@@ -13,6 +13,11 @@ define('MAX_TIMEOUT', 3000);
 // set the default timezone
 date_default_timezone_set( 'America/Chicago' );
 
+// when does it die?
+$death = strtotime('2015-04-09 12:00:00');
+$when = $death - time(); // number of seconds left
+$days_left = (int) $when / (60*60*24);
+
 // logmsg() save a logfile message
 function logmsg($target, $status, $size, $extra)
 {
@@ -82,7 +87,7 @@ else // no error, need to look at the HTTP status
 	{
 	case 200: // everything is ok
 		if ($pagesize > SMALL_PAGE_LIMIT)
-			$status = 'Not yet';
+            $status = sprintf('in %d day%s', $days_left, ($days_left==1)?'':'s');
 		else {
 			$status = 'Perhaps';
 			$extra = 'Main page is unusually small';
@@ -93,12 +98,18 @@ else // no error, need to look at the HTTP status
         $status = 'Most likely';
         break;
 	case 404: // not found
-		$status = 'Yes :-(';
+        if ($days_left <= 0)
+		    $status = 'Yes :-(';
+        else
+            $status = 'Probably';
 		if ($username != '')
 			$extra = 'That user does not appear to exist right now';
 		break;
 	default:
-		$status = 'Probably';
+        if ($days_left < 1)
+            $status = 'Yes :-(';
+        else
+            $status = 'Probably';
 		$extra = sprintf('HTTP status code is %d', $http_status);
 	}
 }
