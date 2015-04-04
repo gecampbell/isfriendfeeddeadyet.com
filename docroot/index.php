@@ -149,7 +149,7 @@ a { color: silver; text-decoration: none; }
 a:hover { text-decoration: underline; }
 marquee { font-family: helvetica, arial, sans-serif; font-weight: bold; color: red; }
 </style>
-<!-- (c)2010 Glen Campbell -->
+<!-- (c)2010-2015 Glen Campbell. All rights reserved. -->
 </head>
 <body>
   <div id="main">
