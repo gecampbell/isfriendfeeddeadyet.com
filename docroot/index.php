@@ -60,6 +60,19 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 // set a very special user agent
 curl_setopt($ch, CURLOPT_USERAGENT, 'isfriendfeeddeadyet.com');
 
+$phrases = [
+    "Yes :-(",
+    "It has ceased to exist",
+    "It has passed on",
+    "It has kicked the bucket",
+    "It has gone to meet its maker",
+    "It has joined the bleeding choir eternal",
+    "It is an ex-FriendFeed",
+    "It rests in peace",
+    "It has shuffled off this mortal coil"
+];
+
+
 // $page is the result of the fetch
 $page = curl_exec($ch);
 
@@ -98,16 +111,17 @@ else // no error, need to look at the HTTP status
         $status = 'Most likely';
         break;
 	case 404: // not found
-        if ($days_left <= 0)
-		    $status = 'Yes :-(';
+        if ($days_left <= 0) {
+		    $status = $phrases[rand(0,count($phrases))];
+        }
         else
             $status = 'Probably';
 		if ($username != '')
 			$extra = 'That user does not appear to exist right now';
 		break;
 	default:
-        if ($days_left < 1)
-            $status = 'Yes :-(';
+        if ($days_left <= 0)
+            $status = $phrases[rand(0,count($phrases))];
         else
             $status = 'Probably';
 		$extra = sprintf('HTTP status code is %d', $http_status);
@@ -129,7 +143,7 @@ logmsg($target, $http_status, $pagesize, $extra);
 <style type="text/css">
 body { background-color: black; color: silver; text-align: center; padding: 0; font-family: helvetica, helvetica neue, arial, sans-serif; width: 100%; }
 #footer { width: 100%; display: block; position: absolute; bottom: 0; padding:1em; font-size: smaller; text-align: center; }
-#status { font-size: 2in; line-height: 1in; color: white; font-weight: bold; }
+#status { font-size: <?php if ($days_left <= 0) echo "24pt"; else echo "2in";?>; line-height: 1in; color: white; font-weight: bold; }
 #extra { margin-top: 2em; font-style: italic; color: silver; }
 a { color: silver; text-decoration: none; }
 a:hover { text-decoration: underline; }
