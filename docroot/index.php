@@ -99,7 +99,9 @@ else // no error, need to look at the HTTP status
 	switch($http_status)
 	{
 	case 200: // everything is ok
-		if ($pagesize > SMALL_PAGE_LIMIT)
+        if ($days_left < 0)
+            $status = "Probably";
+		else if ($pagesize > SMALL_PAGE_LIMIT) 
             $status = sprintf('in %d day%s', $days_left, ($days_left==1)?'':'s');
 		else {
 			$status = 'Perhaps';
@@ -157,9 +159,11 @@ marquee { font-family: helvetica, arial, sans-serif; font-weight: bold; color: r
   	<?php if ($extra) { ?>
   	<p id="extra"><?php print $extra;?></p>
   	<?php } ?>
+    <?php if ($days_left >= 0) { ?>
     <br>
     <a href="http://blog.friendfeed.com/2015/03/dear-friendfeed-community-were.html">FriendFeed
     is not long for this world</a>
+    <?php } ?>
   	<?php
   	// release the curl handle to clear up memory
   	curl_close($ch);
