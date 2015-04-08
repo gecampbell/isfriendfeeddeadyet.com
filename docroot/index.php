@@ -16,7 +16,7 @@ date_default_timezone_set( 'America/Chicago' );
 // when does it die?
 $death = strtotime('2015-04-09 12:00:00');
 $when = $death - time(); // number of seconds left
-$days_left = (int) $when / (60*60*24);
+$days_left = (int) ($when / (60*60*24));
 
 // logmsg() save a logfile message
 function logmsg($target, $status, $size, $extra)
