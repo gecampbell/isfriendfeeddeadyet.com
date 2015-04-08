@@ -143,11 +143,11 @@ logmsg($target, $http_status, $pagesize, $extra);
 <meta name="keywords" content="friendfeed,friend,single-service site,monitoring"/>
 <meta name="refresh" content="600"/>
 <style type="text/css">
-body { background-color: black; color: silver; text-align: center; padding: 0; font-family: helvetica, helvetica neue, arial, sans-serif; width: 100%; }
+body { background-color: white; color: black; text-align: center; padding: 0; font-family: helvetica, helvetica neue, arial, sans-serif; width: 100%; }
 #footer { width: 100%; display: block; position: absolute; bottom: 0; padding:1em; font-size: smaller; text-align: center; }
-#status { font-size: <?php if ($days_left <= 0) echo "24pt"; else echo "2in";?>; line-height: 1in; color: white; font-weight: bold; }
+#status { font-size: <?php if ($days_left <= 0) echo "24pt"; else echo "2in";?>; line-height: 1in; color: navy; font-weight: bold; }
 #extra { margin-top: 2em; font-style: italic; color: silver; }
-a { color: silver; text-decoration: none; }
+a { color: gray; text-decoration: none; }
 a:hover { text-decoration: underline; }
 marquee { font-family: helvetica, arial, sans-serif; font-weight: bold; color: red; }
 </style>
