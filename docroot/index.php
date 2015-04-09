@@ -145,7 +145,7 @@ logmsg($target, $http_status, $pagesize, $extra);
 <style type="text/css">
 body { background-color: white; color: black; text-align: center; padding: 0; font-family: helvetica, helvetica neue, arial, sans-serif; width: 100%; }
 #footer { width: 100%; display: block; position: absolute; bottom: 0; padding:1em; font-size: smaller; text-align: center; }
-#status { font-size: <?php if ($days_left <= 0) echo "24pt"; else echo "2in";?>; line-height: 1in; color: black; font-weight: bold; }
+#status { font-size: <?php if ($days_left < 0) echo "36pt"; else echo "2in";?>; line-height: 1in; color: black; font-weight: bold; }
 #extra { margin-top: 2em; font-style: italic; color: silver; }
 a { color: gray; text-decoration: none; }
 a:hover { text-decoration: underline; }
