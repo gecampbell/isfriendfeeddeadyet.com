@@ -85,7 +85,7 @@ $extra = '';
 // check the returned value
 if (curl_errno($ch)) // there is an error
 {
-	$status = $phrases[rand(0,count($phrases))];
+	$status = $phrases[rand(0,count($phrases)-1)];
 	$extra = curl_error($ch);
 }
 else // no error, need to look at the HTTP status
@@ -111,11 +111,11 @@ else // no error, need to look at the HTTP status
 		break;
     case 301:
     case 302:
-        $status = $phrases[rand(0,count($phrases))];
+        $status = $phrases[rand(0,count($phrases)-1)];
         break;
 	case 404: // not found
         if ($days_left <= 0) {
-		    $status = $phrases[rand(0,count($phrases))];
+		    $status = $phrases[rand(0,count($phrases)-1)];
         }
         else
             $status = 'Probably';
@@ -124,7 +124,7 @@ else // no error, need to look at the HTTP status
 		break;
 	default:
         if ($days_left <= 0)
-            $status = $phrases[rand(0,count($phrases))];
+            $status = $phrases[rand(0,count($phrases)-1)];
         else
             $status = 'Probably';
 		$extra = sprintf('HTTP status code is %d', $http_status);
