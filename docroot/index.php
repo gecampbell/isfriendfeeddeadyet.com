@@ -78,13 +78,13 @@ $page = curl_exec($ch);
 
 // $status holds the returned status
 // values are Yes, No, Maybe
-$status = 'Probably'; // default value
+$status = 'Who the hell knows?'; // default value
 $extra = '';
 
 // check the returned value
 if (curl_errno($ch)) // there is an error
 {
-	$status = 'Probably';
+	$status = $phrases[rand(0,count($phrases))];
 	$extra = curl_error($ch);
 }
 else // no error, need to look at the HTTP status
@@ -100,7 +100,7 @@ else // no error, need to look at the HTTP status
 	{
 	case 200: // everything is ok
         if ($days_left <= 0)
-            $status = "Probably";
+            $status = "Like, who knows?";
 		else if ($pagesize > SMALL_PAGE_LIMIT) 
             $status = sprintf('in %d day%s', $days_left, ($days_left==1)?'':'s');
 		else {
