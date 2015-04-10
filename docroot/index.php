@@ -110,7 +110,7 @@ else // no error, need to look at the HTTP status
 		break;
     case 301:
     case 302:
-        $status = 'Most likely';
+        $status = $phrases[rand(0,count($phrases))];
         break;
 	case 404: // not found
         if ($days_left <= 0) {
