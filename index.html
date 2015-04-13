@@ -17,19 +17,41 @@ width: 60vw;
 #status {
 font-family: "helvetica neue", helvetica, arial, sans-serif;
 font-weight: bold;
-letter-spacing: -1vw;
+letter-spacing: -0.6vw;
 text-align: center;
-font-size: 72pt;
-font-size: 20vw;
+font-size: 48pt;
+font-size: 10vw;
 line-height: 36pt;
-line-height: 10vw;
-text-transform: lowercase;
+line-height: 8vw;
 }
 </style>
 </head>
 <body>
 <p id="status">
-Yes
+yes
 </p>
 </body>
 </html>
+<script type="text/javascript">
+var s = [
+  "yes",
+  "FriendFeed has ceased to exist",
+  "FriendFeed is definitely deceased",
+  "FriendFeed is no more",
+  "FriendFeed has expired",
+  "FriendFeed has gone to meet its maker",
+  "FriendFeed is a stiff",
+  "FriendFeed is bereft of life",
+  "FriendFeed rests in peace",
+  "FriendFeed is pushing up daisies",
+  "FriendFeed's metabolic processes are now history",
+  "FriendFeed has kicked the bucket",
+  "FriendFeed has shuffled off this mortal coil",
+  "FriendFeed has joined the bleedin' choir invisible",
+  "RIP FriendFeed, 2007-2015",
+  "Gone but not forgotten",
+  "No longer nailed to its perch"
+];
+var r = Math.floor(Math.random()*s.length);
+document.getElementById('status').innerHTML = s[r];
+</script>
